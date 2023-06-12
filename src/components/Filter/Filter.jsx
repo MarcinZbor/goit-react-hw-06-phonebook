@@ -1,13 +1,17 @@
-import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { setFilter } from 'redux/filterSlice';
 import styles from './Filter.module.css';
 
-const Filter = ({ inputSearch }) => {
+const Filter = () => {
+
+  const dispatch = useDispatch();
+
   return (
     <>
       <p className={styles.p}>Fined contacts by name</p>
       <input
         className={styles.input}
-        onChange={inputSearch}
+        onChange={e => dispatch(setFilter(e))}
         type="text"
         name="filter"
       />
@@ -15,6 +19,6 @@ const Filter = ({ inputSearch }) => {
   );
 };
 
-Filter.propTypes = { inputSearch: PropTypes.func.isRequired };
+
 
 export default Filter;
