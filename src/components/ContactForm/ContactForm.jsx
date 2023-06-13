@@ -15,7 +15,7 @@ const ContactForm = () => {
     const number = event.currentTarget.elements.number.value;
     const newContact = { name:name, id: nanoid(), number: number};
     contacts.some (contact => name === contact.name)
-    ?alert (`${name} is already in contacts.`)
+    ? alert (`${name} is already in contacts.`)
     : dispatch(addContact(newContact));
     event.currentTarget.elements.name.value = ""
     event.currentTarget.elements.name.number = ""
