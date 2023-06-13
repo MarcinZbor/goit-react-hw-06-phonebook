@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { contactsReducer } from './contactsSlise';
 import { filterReducer } from './filterSlice';
-import storage from 'redux-persist/lib/types';
+import storage from 'redux-persist/lib/storage';
 import {
   persistStore,
   persistReducer,
@@ -32,6 +32,13 @@ export const store = configureStore({
       },
     }),
   ],
+
+  // preloadedState: {
+  //   contacts: [],
+  //   filter: '',
+  // },
+
+  // devTools: process.env.NODE_ENV !== 'production',
 });
 
 export const persistor = persistStore(store);
